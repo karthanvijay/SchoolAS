@@ -1,0 +1,1745 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SchoolManagementSystemModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SchoolManagementSystemModelStoreContainer">
+          <EntitySet Name="AcademicYear" EntityType="SchoolManagementSystemModel.Store.AcademicYear" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Account" EntityType="SchoolManagementSystemModel.Store.Account" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Address" EntityType="SchoolManagementSystemModel.Store.Address" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cast" EntityType="SchoolManagementSystemModel.Store.Cast" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Class" EntityType="SchoolManagementSystemModel.Store.Class" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExamSubjectMarks" EntityType="SchoolManagementSystemModel.Store.ExamSubjectMarks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExamType" EntityType="SchoolManagementSystemModel.Store.ExamType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FeeMaster" EntityType="SchoolManagementSystemModel.Store.FeeMaster" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Group" EntityType="SchoolManagementSystemModel.Store.Group" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Medium" EntityType="SchoolManagementSystemModel.Store.Medium" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ScholarShip" EntityType="SchoolManagementSystemModel.Store.ScholarShip" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ScholarShipDetails" EntityType="SchoolManagementSystemModel.Store.ScholarShipDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Section" EntityType="SchoolManagementSystemModel.Store.Section" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Student" EntityType="SchoolManagementSystemModel.Store.Student" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SubjectMaster" EntityType="SchoolManagementSystemModel.Store.SubjectMaster" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SubjectTable" EntityType="SchoolManagementSystemModel.Store.SubjectTable" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="SchoolManagementSystemModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TransactionDetails" EntityType="SchoolManagementSystemModel.Store.TransactionDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="trig" EntityType="SchoolManagementSystemModel.Store.trig" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="SchoolManagementSystemModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserGroupAssociation" EntityType="SchoolManagementSystemModel.Store.UserGroupAssociation" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Account_AcademicYear" Association="SchoolManagementSystemModel.Store.FK_Account_AcademicYear">
+            <End Role="AcademicYear" EntitySet="AcademicYear" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_Class" Association="SchoolManagementSystemModel.Store.FK_Account_Class">
+            <End Role="Class" EntitySet="Class" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_Medium" Association="SchoolManagementSystemModel.Store.FK_Account_Medium">
+            <End Role="Medium" EntitySet="Medium" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_Student" Association="SchoolManagementSystemModel.Store.FK_Account_Student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeeMaster_AcademicYear" Association="SchoolManagementSystemModel.Store.FK_FeeMaster_AcademicYear">
+            <End Role="AcademicYear" EntitySet="AcademicYear" />
+            <End Role="FeeMaster" EntitySet="FeeMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeeMaster_Class" Association="SchoolManagementSystemModel.Store.FK_FeeMaster_Class">
+            <End Role="Class" EntitySet="Class" />
+            <End Role="FeeMaster" EntitySet="FeeMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeeMaster_FeeMaster" Association="SchoolManagementSystemModel.Store.FK_FeeMaster_FeeMaster">
+            <End Role="Medium" EntitySet="Medium" />
+            <End Role="FeeMaster" EntitySet="FeeMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScholarShipDetails_AcademicYear" Association="SchoolManagementSystemModel.Store.FK_ScholarShipDetails_AcademicYear">
+            <End Role="AcademicYear" EntitySet="AcademicYear" />
+            <End Role="ScholarShipDetails" EntitySet="ScholarShipDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScholarShipDetails_ScholarShip" Association="SchoolManagementSystemModel.Store.FK_ScholarShipDetails_ScholarShip">
+            <End Role="ScholarShip" EntitySet="ScholarShip" />
+            <End Role="ScholarShipDetails" EntitySet="ScholarShipDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScholarShipDetails_Student" Association="SchoolManagementSystemModel.Store.FK_ScholarShipDetails_Student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="ScholarShipDetails" EntitySet="ScholarShipDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Address" Association="SchoolManagementSystemModel.Store.FK_Student_Address">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Cast" Association="SchoolManagementSystemModel.Store.FK_Student_Cast">
+            <End Role="Cast" EntitySet="Cast" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Class" Association="SchoolManagementSystemModel.Store.FK_Student_Class">
+            <End Role="Class" EntitySet="Class" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Medium" Association="SchoolManagementSystemModel.Store.FK_Student_Medium">
+            <End Role="Medium" EntitySet="Medium" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Section" Association="SchoolManagementSystemModel.Store.FK_Student_Section">
+            <End Role="Section" EntitySet="Section" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_AcademicYear" Association="SchoolManagementSystemModel.Store.FK_TransactionDetails_AcademicYear">
+            <End Role="AcademicYear" EntitySet="AcademicYear" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_Account" Association="SchoolManagementSystemModel.Store.FK_TransactionDetails_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_Student" Association="SchoolManagementSystemModel.Store.FK_TransactionDetails_Student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_User" Association="SchoolManagementSystemModel.Store.FK_TransactionDetails_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Address" Association="SchoolManagementSystemModel.Store.FK_User_Address">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroupAssociation_Group" Association="SchoolManagementSystemModel.Store.FK_UserGroupAssociation_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="UserGroupAssociation" EntitySet="UserGroupAssociation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroupAssociation_User" Association="SchoolManagementSystemModel.Store.FK_UserGroupAssociation_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserGroupAssociation" EntitySet="UserGroupAssociation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroupAssociation_UserGroupAssociation" Association="SchoolManagementSystemModel.Store.FK_UserGroupAssociation_UserGroupAssociation">
+            <End Role="UserGroupAssociation" EntitySet="UserGroupAssociation" />
+            <End Role="UserGroupAssociation1" EntitySet="UserGroupAssociation" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AcademicYear">
+          <Key>
+            <PropertyRef Name="AcademicYearId" />
+          </Key>
+          <Property Name="AcademicYearId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AcademicYearStart" Type="datetime" Nullable="false" />
+          <Property Name="AcademicYearEnd" Type="datetime" Nullable="false" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="CarryFarwordFee" Type="int" />
+          <Property Name="FeePaid" Type="int" />
+          <Property Name="Discount" Type="int" />
+          <Property Name="AcademicYearId" Type="int" Nullable="false" />
+          <Property Name="ClassId" Type="int" Nullable="false" />
+          <Property Name="MediumId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressId" />
+          </Key>
+          <Property Name="AddressId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AdrressLineOne" Type="nvarchar(max)" />
+          <Property Name="Village" Type="nvarchar" MaxLength="50" />
+          <Property Name="District" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pincode" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Cast">
+          <Key>
+            <PropertyRef Name="CastId" />
+          </Key>
+          <Property Name="CastId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CastName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ClassId" />
+          </Key>
+          <Property Name="ClassId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ClassName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ExamSubjectMarks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="ExamTypeId" Type="int" Nullable="false" />
+          <Property Name="SubjectId" Type="int" Nullable="false" />
+          <Property Name="MarksObtained" Type="int" />
+        </EntityType>
+        <EntityType Name="ExamType">
+          <Key>
+            <PropertyRef Name="ExamTypeId" />
+          </Key>
+          <Property Name="ExamTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ExamName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="PerSubjectMarks" Type="int" Nullable="false" />
+          <Property Name="PassingMarksPerSubject" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FeeMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MediumId" Type="int" Nullable="false" />
+          <Property Name="ClassId" Type="int" Nullable="false" />
+          <Property Name="Fee" Type="int" Nullable="false" />
+          <Property Name="AcademicYearId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GroupCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="GroupDescription" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Medium">
+          <Key>
+            <PropertyRef Name="MediumId" />
+          </Key>
+          <Property Name="MediumId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MediumName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ScholarShip">
+          <Key>
+            <PropertyRef Name="ScholarShipId" />
+          </Key>
+          <Property Name="ScholarShipId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ScholarShipName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ScholarShipDetails">
+          <Key>
+            <PropertyRef Name="ScholarShipDetailsId" />
+          </Key>
+          <Property Name="ScholarShipDetailsId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="ScholarShipTypeId" Type="int" Nullable="false" />
+          <Property Name="AmountSanctioned" Type="int" />
+          <Property Name="DateSanctioned" Type="datetime" />
+          <Property Name="AcademicYearId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Section">
+          <Key>
+            <PropertyRef Name="SectionId" />
+          </Key>
+          <Property Name="SectionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SectionName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Gender" Type="nchar" MaxLength="10" />
+          <Property Name="Class" Type="int" Nullable="false" />
+          <Property Name="AddressId" Type="int" Nullable="false" />
+          <Property Name="CastId" Type="int" Nullable="false" />
+          <Property Name="FatherName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="MotherName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="StudentName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="MediumId" Type="int" Nullable="false" />
+          <Property Name="SectionId" Type="int" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SubjectMaster">
+          <Key>
+            <PropertyRef Name="SubjectId" />
+          </Key>
+          <Property Name="SubjectId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SubjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SubjectTable">
+          <Key>
+            <PropertyRef Name="ClassId" />
+            <PropertyRef Name="MediumId" />
+            <PropertyRef Name="SubjectId" />
+          </Key>
+          <Property Name="ClassId" Type="int" Nullable="false" />
+          <Property Name="MediumId" Type="int" Nullable="false" />
+          <Property Name="SubjectId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TransactionDetails">
+          <Key>
+            <PropertyRef Name="TransactionDetailsId" />
+          </Key>
+          <Property Name="TransactionDetailsId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="AmountPaid" Type="int" Nullable="false" />
+          <Property Name="DatePaid" Type="datetime" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Approved" Type="bit" />
+          <Property Name="AcademicYearId" Type="int" Nullable="false" />
+          <Property Name="Rejected" Type="bit" />
+        </EntityType>
+        <EntityType Name="trig">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserPassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="PasswordChangeDate" Type="datetime" />
+          <Property Name="DateAdded" Type="datetime" />
+          <Property Name="EffectiveDate" Type="datetime" />
+          <Property Name="ExpirationDate" Type="datetime" />
+          <Property Name="UserTitle" Type="nvarchar" MaxLength="150" />
+          <Property Name="Status" Type="int" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="AddressId" Type="int" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserGroupAssociation">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Account_AcademicYear">
+          <End Role="AcademicYear" Type="SchoolManagementSystemModel.Store.AcademicYear" Multiplicity="1" />
+          <End Role="Account" Type="SchoolManagementSystemModel.Store.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AcademicYear">
+              <PropertyRef Name="AcademicYearId" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="AcademicYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_Class">
+          <End Role="Class" Type="SchoolManagementSystemModel.Store.Class" Multiplicity="1" />
+          <End Role="Account" Type="SchoolManagementSystemModel.Store.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_Medium">
+          <End Role="Medium" Type="SchoolManagementSystemModel.Store.Medium" Multiplicity="1" />
+          <End Role="Account" Type="SchoolManagementSystemModel.Store.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medium">
+              <PropertyRef Name="MediumId" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="MediumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_Student">
+          <End Role="Student" Type="SchoolManagementSystemModel.Store.Student" Multiplicity="1" />
+          <End Role="Account" Type="SchoolManagementSystemModel.Store.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeeMaster_AcademicYear">
+          <End Role="AcademicYear" Type="SchoolManagementSystemModel.Store.AcademicYear" Multiplicity="1" />
+          <End Role="FeeMaster" Type="SchoolManagementSystemModel.Store.FeeMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AcademicYear">
+              <PropertyRef Name="AcademicYearId" />
+            </Principal>
+            <Dependent Role="FeeMaster">
+              <PropertyRef Name="AcademicYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeeMaster_Class">
+          <End Role="Class" Type="SchoolManagementSystemModel.Store.Class" Multiplicity="1" />
+          <End Role="FeeMaster" Type="SchoolManagementSystemModel.Store.FeeMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+            </Principal>
+            <Dependent Role="FeeMaster">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeeMaster_FeeMaster">
+          <End Role="Medium" Type="SchoolManagementSystemModel.Store.Medium" Multiplicity="1" />
+          <End Role="FeeMaster" Type="SchoolManagementSystemModel.Store.FeeMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medium">
+              <PropertyRef Name="MediumId" />
+            </Principal>
+            <Dependent Role="FeeMaster">
+              <PropertyRef Name="MediumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScholarShipDetails_AcademicYear">
+          <End Role="AcademicYear" Type="SchoolManagementSystemModel.Store.AcademicYear" Multiplicity="1" />
+          <End Role="ScholarShipDetails" Type="SchoolManagementSystemModel.Store.ScholarShipDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AcademicYear">
+              <PropertyRef Name="AcademicYearId" />
+            </Principal>
+            <Dependent Role="ScholarShipDetails">
+              <PropertyRef Name="AcademicYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScholarShipDetails_ScholarShip">
+          <End Role="ScholarShip" Type="SchoolManagementSystemModel.Store.ScholarShip" Multiplicity="1" />
+          <End Role="ScholarShipDetails" Type="SchoolManagementSystemModel.Store.ScholarShipDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScholarShip">
+              <PropertyRef Name="ScholarShipId" />
+            </Principal>
+            <Dependent Role="ScholarShipDetails">
+              <PropertyRef Name="ScholarShipTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScholarShipDetails_Student">
+          <End Role="Student" Type="SchoolManagementSystemModel.Store.Student" Multiplicity="1" />
+          <End Role="ScholarShipDetails" Type="SchoolManagementSystemModel.Store.ScholarShipDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="ScholarShipDetails">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Address">
+          <End Role="Address" Type="SchoolManagementSystemModel.Store.Address" Multiplicity="1" />
+          <End Role="Student" Type="SchoolManagementSystemModel.Store.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="AddressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Cast">
+          <End Role="Cast" Type="SchoolManagementSystemModel.Store.Cast" Multiplicity="1" />
+          <End Role="Student" Type="SchoolManagementSystemModel.Store.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cast">
+              <PropertyRef Name="CastId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="CastId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Class">
+          <End Role="Class" Type="SchoolManagementSystemModel.Store.Class" Multiplicity="1" />
+          <End Role="Student" Type="SchoolManagementSystemModel.Store.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Class" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Medium">
+          <End Role="Medium" Type="SchoolManagementSystemModel.Store.Medium" Multiplicity="1" />
+          <End Role="Student" Type="SchoolManagementSystemModel.Store.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medium">
+              <PropertyRef Name="MediumId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="MediumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Section">
+          <End Role="Section" Type="SchoolManagementSystemModel.Store.Section" Multiplicity="1" />
+          <End Role="Student" Type="SchoolManagementSystemModel.Store.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Section">
+              <PropertyRef Name="SectionId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="SectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_AcademicYear">
+          <End Role="AcademicYear" Type="SchoolManagementSystemModel.Store.AcademicYear" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="SchoolManagementSystemModel.Store.TransactionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AcademicYear">
+              <PropertyRef Name="AcademicYearId" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="AcademicYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_Account">
+          <End Role="Account" Type="SchoolManagementSystemModel.Store.Account" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="SchoolManagementSystemModel.Store.TransactionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_Student">
+          <End Role="Student" Type="SchoolManagementSystemModel.Store.Student" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="SchoolManagementSystemModel.Store.TransactionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_User">
+          <End Role="User" Type="SchoolManagementSystemModel.Store.User" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="SchoolManagementSystemModel.Store.TransactionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Address">
+          <End Role="Address" Type="SchoolManagementSystemModel.Store.Address" Multiplicity="1" />
+          <End Role="User" Type="SchoolManagementSystemModel.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="AddressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroupAssociation_Group">
+          <End Role="Group" Type="SchoolManagementSystemModel.Store.Group" Multiplicity="1" />
+          <End Role="UserGroupAssociation" Type="SchoolManagementSystemModel.Store.UserGroupAssociation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="UserGroupAssociation">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroupAssociation_User">
+          <End Role="User" Type="SchoolManagementSystemModel.Store.User" Multiplicity="1" />
+          <End Role="UserGroupAssociation" Type="SchoolManagementSystemModel.Store.UserGroupAssociation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserGroupAssociation">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroupAssociation_UserGroupAssociation">
+          <End Role="UserGroupAssociation" Type="SchoolManagementSystemModel.Store.UserGroupAssociation" Multiplicity="1" />
+          <End Role="UserGroupAssociation1" Type="SchoolManagementSystemModel.Store.UserGroupAssociation" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserGroupAssociation">
+              <PropertyRef Name="UserId" />
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="UserGroupAssociation1">
+              <PropertyRef Name="UserId" />
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'TestDB.dbo.trig_archive' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="trig_archive">
+        <Property Name="id" Type="int" />
+        <Property Name="name" Type="varchar" MaxLength="50" />
+      </EntityType>-->
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SchoolManagementSystemModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SchoolManagementSystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AcademicYears" EntityType="SchoolManagementSystemModel.AcademicYear" />
+          <EntitySet Name="Accounts" EntityType="SchoolManagementSystemModel.Account" />
+          <EntitySet Name="Addresses" EntityType="SchoolManagementSystemModel.Address" />
+          <EntitySet Name="Casts" EntityType="SchoolManagementSystemModel.Cast" />
+          <EntitySet Name="Classes" EntityType="SchoolManagementSystemModel.Class" />
+          <EntitySet Name="ExamSubjectMarks" EntityType="SchoolManagementSystemModel.ExamSubjectMark" />
+          <EntitySet Name="ExamTypes" EntityType="SchoolManagementSystemModel.ExamType" />
+          <EntitySet Name="FeeMasters" EntityType="SchoolManagementSystemModel.FeeMaster" />
+          <EntitySet Name="Groups" EntityType="SchoolManagementSystemModel.Group" />
+          <EntitySet Name="Media" EntityType="SchoolManagementSystemModel.Medium" />
+          <EntitySet Name="ScholarShips" EntityType="SchoolManagementSystemModel.ScholarShip" />
+          <EntitySet Name="ScholarShipDetails" EntityType="SchoolManagementSystemModel.ScholarShipDetail" />
+          <EntitySet Name="Sections" EntityType="SchoolManagementSystemModel.Section" />
+          <EntitySet Name="Students" EntityType="SchoolManagementSystemModel.Student" />
+          <EntitySet Name="SubjectMasters" EntityType="SchoolManagementSystemModel.SubjectMaster" />
+          <EntitySet Name="SubjectTables" EntityType="SchoolManagementSystemModel.SubjectTable" />
+          <EntitySet Name="sysdiagrams" EntityType="SchoolManagementSystemModel.sysdiagram" />
+          <EntitySet Name="TransactionDetails" EntityType="SchoolManagementSystemModel.TransactionDetail" />
+          <EntitySet Name="trigs" EntityType="SchoolManagementSystemModel.trig" />
+          <EntitySet Name="Users" EntityType="SchoolManagementSystemModel.User" />
+          <EntitySet Name="UserGroupAssociations" EntityType="SchoolManagementSystemModel.UserGroupAssociation" />
+          <AssociationSet Name="FK_Account_AcademicYear" Association="SchoolManagementSystemModel.FK_Account_AcademicYear">
+            <End Role="AcademicYear" EntitySet="AcademicYears" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeeMaster_AcademicYear" Association="SchoolManagementSystemModel.FK_FeeMaster_AcademicYear">
+            <End Role="AcademicYear" EntitySet="AcademicYears" />
+            <End Role="FeeMaster" EntitySet="FeeMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScholarShipDetails_AcademicYear" Association="SchoolManagementSystemModel.FK_ScholarShipDetails_AcademicYear">
+            <End Role="AcademicYear" EntitySet="AcademicYears" />
+            <End Role="ScholarShipDetail" EntitySet="ScholarShipDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_AcademicYear" Association="SchoolManagementSystemModel.FK_TransactionDetails_AcademicYear">
+            <End Role="AcademicYear" EntitySet="AcademicYears" />
+            <End Role="TransactionDetail" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_Class" Association="SchoolManagementSystemModel.FK_Account_Class">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_Medium" Association="SchoolManagementSystemModel.FK_Account_Medium">
+            <End Role="Medium" EntitySet="Media" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_Student" Association="SchoolManagementSystemModel.FK_Account_Student">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_Account" Association="SchoolManagementSystemModel.FK_TransactionDetails_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="TransactionDetail" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Address" Association="SchoolManagementSystemModel.FK_Student_Address">
+            <End Role="Address" EntitySet="Addresses" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Address" Association="SchoolManagementSystemModel.FK_User_Address">
+            <End Role="Address" EntitySet="Addresses" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Cast" Association="SchoolManagementSystemModel.FK_Student_Cast">
+            <End Role="Cast" EntitySet="Casts" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeeMaster_Class" Association="SchoolManagementSystemModel.FK_FeeMaster_Class">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="FeeMaster" EntitySet="FeeMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Class" Association="SchoolManagementSystemModel.FK_Student_Class">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeeMaster_FeeMaster" Association="SchoolManagementSystemModel.FK_FeeMaster_FeeMaster">
+            <End Role="Medium" EntitySet="Media" />
+            <End Role="FeeMaster" EntitySet="FeeMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroupAssociation_Group" Association="SchoolManagementSystemModel.FK_UserGroupAssociation_Group">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="UserGroupAssociation" EntitySet="UserGroupAssociations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Medium" Association="SchoolManagementSystemModel.FK_Student_Medium">
+            <End Role="Medium" EntitySet="Media" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScholarShipDetails_ScholarShip" Association="SchoolManagementSystemModel.FK_ScholarShipDetails_ScholarShip">
+            <End Role="ScholarShip" EntitySet="ScholarShips" />
+            <End Role="ScholarShipDetail" EntitySet="ScholarShipDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScholarShipDetails_Student" Association="SchoolManagementSystemModel.FK_ScholarShipDetails_Student">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="ScholarShipDetail" EntitySet="ScholarShipDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Section" Association="SchoolManagementSystemModel.FK_Student_Section">
+            <End Role="Section" EntitySet="Sections" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_Student" Association="SchoolManagementSystemModel.FK_TransactionDetails_Student">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="TransactionDetail" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_User" Association="SchoolManagementSystemModel.FK_TransactionDetails_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="TransactionDetail" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroupAssociation_User" Association="SchoolManagementSystemModel.FK_UserGroupAssociation_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserGroupAssociation" EntitySet="UserGroupAssociations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroupAssociation_UserGroupAssociation" Association="SchoolManagementSystemModel.FK_UserGroupAssociation_UserGroupAssociation">
+            <End Role="UserGroupAssociation" EntitySet="UserGroupAssociations" />
+            <End Role="UserGroupAssociation1" EntitySet="UserGroupAssociations" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AcademicYear">
+          <Key>
+            <PropertyRef Name="AcademicYearId" />
+          </Key>
+          <Property Type="Int32" Name="AcademicYearId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="AcademicYearStart" Nullable="false" />
+          <Property Type="DateTime" Name="AcademicYearEnd" Nullable="false" />
+          <Property Type="Boolean" Name="isActive" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="SchoolManagementSystemModel.FK_Account_AcademicYear" FromRole="AcademicYear" ToRole="Account" />
+          <NavigationProperty Name="FeeMasters" Relationship="SchoolManagementSystemModel.FK_FeeMaster_AcademicYear" FromRole="AcademicYear" ToRole="FeeMaster" />
+          <NavigationProperty Name="ScholarShipDetails" Relationship="SchoolManagementSystemModel.FK_ScholarShipDetails_AcademicYear" FromRole="AcademicYear" ToRole="ScholarShipDetail" />
+          <NavigationProperty Name="TransactionDetails" Relationship="SchoolManagementSystemModel.FK_TransactionDetails_AcademicYear" FromRole="AcademicYear" ToRole="TransactionDetail" />
+        </EntityType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Type="Int32" Name="AccountId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="StudentId" Nullable="false" />
+          <Property Type="Int32" Name="CarryFarwordFee" />
+          <Property Type="Int32" Name="FeePaid" />
+          <Property Type="Int32" Name="Discount" />
+          <Property Type="Int32" Name="AcademicYearId" Nullable="false" />
+          <Property Type="Int32" Name="ClassId" Nullable="false" />
+          <Property Type="Int32" Name="MediumId" Nullable="false" />
+          <NavigationProperty Name="AcademicYear" Relationship="SchoolManagementSystemModel.FK_Account_AcademicYear" FromRole="Account" ToRole="AcademicYear" />
+          <NavigationProperty Name="Class" Relationship="SchoolManagementSystemModel.FK_Account_Class" FromRole="Account" ToRole="Class" />
+          <NavigationProperty Name="Medium" Relationship="SchoolManagementSystemModel.FK_Account_Medium" FromRole="Account" ToRole="Medium" />
+          <NavigationProperty Name="Student" Relationship="SchoolManagementSystemModel.FK_Account_Student" FromRole="Account" ToRole="Student" />
+          <NavigationProperty Name="TransactionDetails" Relationship="SchoolManagementSystemModel.FK_TransactionDetails_Account" FromRole="Account" ToRole="TransactionDetail" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressId" />
+          </Key>
+          <Property Type="Int32" Name="AddressId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AdrressLineOne" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Village" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="District" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Pincode" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Students" Relationship="SchoolManagementSystemModel.FK_Student_Address" FromRole="Address" ToRole="Student" />
+          <NavigationProperty Name="Users" Relationship="SchoolManagementSystemModel.FK_User_Address" FromRole="Address" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Cast">
+          <Key>
+            <PropertyRef Name="CastId" />
+          </Key>
+          <Property Type="Int32" Name="CastId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CastName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Students" Relationship="SchoolManagementSystemModel.FK_Student_Cast" FromRole="Cast" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ClassId" />
+          </Key>
+          <Property Type="Int32" Name="ClassId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ClassName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Accounts" Relationship="SchoolManagementSystemModel.FK_Account_Class" FromRole="Class" ToRole="Account" />
+          <NavigationProperty Name="FeeMasters" Relationship="SchoolManagementSystemModel.FK_FeeMaster_Class" FromRole="Class" ToRole="FeeMaster" />
+          <NavigationProperty Name="Students" Relationship="SchoolManagementSystemModel.FK_Student_Class" FromRole="Class" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="ExamSubjectMark">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="StudentId" Nullable="false" />
+          <Property Type="Int32" Name="ExamTypeId" Nullable="false" />
+          <Property Type="Int32" Name="SubjectId" Nullable="false" />
+          <Property Type="Int32" Name="MarksObtained" />
+        </EntityType>
+        <EntityType Name="ExamType">
+          <Key>
+            <PropertyRef Name="ExamTypeId" />
+          </Key>
+          <Property Type="Int32" Name="ExamTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ExamName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PerSubjectMarks" Nullable="false" />
+          <Property Type="Int32" Name="PassingMarksPerSubject" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FeeMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="MediumId" Nullable="false" />
+          <Property Type="Int32" Name="ClassId" Nullable="false" />
+          <Property Type="Int32" Name="Fee" Nullable="false" />
+          <Property Type="Int32" Name="AcademicYearId" Nullable="false" />
+          <NavigationProperty Name="AcademicYear" Relationship="SchoolManagementSystemModel.FK_FeeMaster_AcademicYear" FromRole="FeeMaster" ToRole="AcademicYear" />
+          <NavigationProperty Name="Class" Relationship="SchoolManagementSystemModel.FK_FeeMaster_Class" FromRole="FeeMaster" ToRole="Class" />
+          <NavigationProperty Name="Medium" Relationship="SchoolManagementSystemModel.FK_FeeMaster_FeeMaster" FromRole="FeeMaster" ToRole="Medium" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Type="Int32" Name="GroupId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="GroupCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GroupDescription" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserGroupAssociations" Relationship="SchoolManagementSystemModel.FK_UserGroupAssociation_Group" FromRole="Group" ToRole="UserGroupAssociation" />
+        </EntityType>
+        <EntityType Name="Medium">
+          <Key>
+            <PropertyRef Name="MediumId" />
+          </Key>
+          <Property Type="Int32" Name="MediumId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="MediumName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Accounts" Relationship="SchoolManagementSystemModel.FK_Account_Medium" FromRole="Medium" ToRole="Account" />
+          <NavigationProperty Name="FeeMasters" Relationship="SchoolManagementSystemModel.FK_FeeMaster_FeeMaster" FromRole="Medium" ToRole="FeeMaster" />
+          <NavigationProperty Name="Students" Relationship="SchoolManagementSystemModel.FK_Student_Medium" FromRole="Medium" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="ScholarShip">
+          <Key>
+            <PropertyRef Name="ScholarShipId" />
+          </Key>
+          <Property Type="Int32" Name="ScholarShipId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ScholarShipName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ScholarShipDetails" Relationship="SchoolManagementSystemModel.FK_ScholarShipDetails_ScholarShip" FromRole="ScholarShip" ToRole="ScholarShipDetail" />
+        </EntityType>
+        <EntityType Name="ScholarShipDetail">
+          <Key>
+            <PropertyRef Name="ScholarShipDetailsId" />
+          </Key>
+          <Property Type="Int32" Name="ScholarShipDetailsId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="StudentId" Nullable="false" />
+          <Property Type="Int32" Name="ScholarShipTypeId" Nullable="false" />
+          <Property Type="Int32" Name="AmountSanctioned" />
+          <Property Type="DateTime" Name="DateSanctioned" />
+          <Property Type="Int32" Name="AcademicYearId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <NavigationProperty Name="AcademicYear" Relationship="SchoolManagementSystemModel.FK_ScholarShipDetails_AcademicYear" FromRole="ScholarShipDetail" ToRole="AcademicYear" />
+          <NavigationProperty Name="ScholarShip" Relationship="SchoolManagementSystemModel.FK_ScholarShipDetails_ScholarShip" FromRole="ScholarShipDetail" ToRole="ScholarShip" />
+          <NavigationProperty Name="Student" Relationship="SchoolManagementSystemModel.FK_ScholarShipDetails_Student" FromRole="ScholarShipDetail" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Section">
+          <Key>
+            <PropertyRef Name="SectionId" />
+          </Key>
+          <Property Type="Int32" Name="SectionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SectionName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Students" Relationship="SchoolManagementSystemModel.FK_Student_Section" FromRole="Section" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Type="Int32" Name="StudentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Age" />
+          <Property Type="String" Name="Gender" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="Class" Nullable="false" />
+          <Property Type="Int32" Name="AddressId" Nullable="false" />
+          <Property Type="Int32" Name="CastId" Nullable="false" />
+          <Property Type="String" Name="FatherName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MotherName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StudentName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MediumId" Nullable="false" />
+          <Property Type="Int32" Name="SectionId" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="SchoolManagementSystemModel.FK_Account_Student" FromRole="Student" ToRole="Account" />
+          <NavigationProperty Name="Address" Relationship="SchoolManagementSystemModel.FK_Student_Address" FromRole="Student" ToRole="Address" />
+          <NavigationProperty Name="Cast" Relationship="SchoolManagementSystemModel.FK_Student_Cast" FromRole="Student" ToRole="Cast" />
+          <NavigationProperty Name="Class1" Relationship="SchoolManagementSystemModel.FK_Student_Class" FromRole="Student" ToRole="Class" />
+          <NavigationProperty Name="Medium" Relationship="SchoolManagementSystemModel.FK_Student_Medium" FromRole="Student" ToRole="Medium" />
+          <NavigationProperty Name="ScholarShipDetails" Relationship="SchoolManagementSystemModel.FK_ScholarShipDetails_Student" FromRole="Student" ToRole="ScholarShipDetail" />
+          <NavigationProperty Name="Section" Relationship="SchoolManagementSystemModel.FK_Student_Section" FromRole="Student" ToRole="Section" />
+          <NavigationProperty Name="TransactionDetails" Relationship="SchoolManagementSystemModel.FK_TransactionDetails_Student" FromRole="Student" ToRole="TransactionDetail" />
+        </EntityType>
+        <EntityType Name="SubjectMaster">
+          <Key>
+            <PropertyRef Name="SubjectId" />
+          </Key>
+          <Property Type="Int32" Name="SubjectId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SubjectName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SubjectTable">
+          <Key>
+            <PropertyRef Name="ClassId" />
+            <PropertyRef Name="MediumId" />
+            <PropertyRef Name="SubjectId" />
+          </Key>
+          <Property Type="Int32" Name="ClassId" Nullable="false" />
+          <Property Type="Int32" Name="MediumId" Nullable="false" />
+          <Property Type="Int32" Name="SubjectId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TransactionDetail">
+          <Key>
+            <PropertyRef Name="TransactionDetailsId" />
+          </Key>
+          <Property Type="Int32" Name="TransactionDetailsId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AccountId" Nullable="false" />
+          <Property Type="Int32" Name="StudentId" Nullable="false" />
+          <Property Type="Int32" Name="AmountPaid" Nullable="false" />
+          <Property Type="DateTime" Name="DatePaid" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Boolean" Name="Approved" />
+          <Property Type="Int32" Name="AcademicYearId" Nullable="false" />
+          <Property Type="Boolean" Name="Rejected" />
+          <NavigationProperty Name="AcademicYear" Relationship="SchoolManagementSystemModel.FK_TransactionDetails_AcademicYear" FromRole="TransactionDetail" ToRole="AcademicYear" />
+          <NavigationProperty Name="Account" Relationship="SchoolManagementSystemModel.FK_TransactionDetails_Account" FromRole="TransactionDetail" ToRole="Account" />
+          <NavigationProperty Name="Student" Relationship="SchoolManagementSystemModel.FK_TransactionDetails_Student" FromRole="TransactionDetail" ToRole="Student" />
+          <NavigationProperty Name="User" Relationship="SchoolManagementSystemModel.FK_TransactionDetails_User" FromRole="TransactionDetail" ToRole="User" />
+        </EntityType>
+        <EntityType Name="trig">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserEmail" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserPassword" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PasswordChangeDate" />
+          <Property Type="DateTime" Name="DateAdded" />
+          <Property Type="DateTime" Name="EffectiveDate" />
+          <Property Type="DateTime" Name="ExpirationDate" />
+          <Property Type="String" Name="UserTitle" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Status" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+          <Property Type="Int32" Name="AddressId" Nullable="false" />
+          <Property Type="DateTime" Name="LastLoginDate" />
+          <NavigationProperty Name="Address" Relationship="SchoolManagementSystemModel.FK_User_Address" FromRole="User" ToRole="Address" />
+          <NavigationProperty Name="TransactionDetails" Relationship="SchoolManagementSystemModel.FK_TransactionDetails_User" FromRole="User" ToRole="TransactionDetail" />
+          <NavigationProperty Name="UserGroupAssociations" Relationship="SchoolManagementSystemModel.FK_UserGroupAssociation_User" FromRole="User" ToRole="UserGroupAssociation" />
+        </EntityType>
+        <EntityType Name="UserGroupAssociation">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="GroupId" Nullable="false" />
+          <NavigationProperty Name="Group" Relationship="SchoolManagementSystemModel.FK_UserGroupAssociation_Group" FromRole="UserGroupAssociation" ToRole="Group" />
+          <NavigationProperty Name="User" Relationship="SchoolManagementSystemModel.FK_UserGroupAssociation_User" FromRole="UserGroupAssociation" ToRole="User" />
+          <NavigationProperty Name="UserGroupAssociation1" Relationship="SchoolManagementSystemModel.FK_UserGroupAssociation_UserGroupAssociation" FromRole="UserGroupAssociation" ToRole="UserGroupAssociation1" />
+          <NavigationProperty Name="UserGroupAssociation2" Relationship="SchoolManagementSystemModel.FK_UserGroupAssociation_UserGroupAssociation" FromRole="UserGroupAssociation1" ToRole="UserGroupAssociation" />
+        </EntityType>
+        <Association Name="FK_Account_AcademicYear">
+          <End Type="SchoolManagementSystemModel.AcademicYear" Role="AcademicYear" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.Account" Role="Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AcademicYear">
+              <PropertyRef Name="AcademicYearId" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="AcademicYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeeMaster_AcademicYear">
+          <End Type="SchoolManagementSystemModel.AcademicYear" Role="AcademicYear" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.FeeMaster" Role="FeeMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AcademicYear">
+              <PropertyRef Name="AcademicYearId" />
+            </Principal>
+            <Dependent Role="FeeMaster">
+              <PropertyRef Name="AcademicYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScholarShipDetails_AcademicYear">
+          <End Type="SchoolManagementSystemModel.AcademicYear" Role="AcademicYear" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.ScholarShipDetail" Role="ScholarShipDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AcademicYear">
+              <PropertyRef Name="AcademicYearId" />
+            </Principal>
+            <Dependent Role="ScholarShipDetail">
+              <PropertyRef Name="AcademicYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_AcademicYear">
+          <End Type="SchoolManagementSystemModel.AcademicYear" Role="AcademicYear" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.TransactionDetail" Role="TransactionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AcademicYear">
+              <PropertyRef Name="AcademicYearId" />
+            </Principal>
+            <Dependent Role="TransactionDetail">
+              <PropertyRef Name="AcademicYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_Class">
+          <End Type="SchoolManagementSystemModel.Class" Role="Class" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.Account" Role="Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_Medium">
+          <End Type="SchoolManagementSystemModel.Medium" Role="Medium" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.Account" Role="Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medium">
+              <PropertyRef Name="MediumId" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="MediumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_Student">
+          <End Type="SchoolManagementSystemModel.Student" Role="Student" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.Account" Role="Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_Account">
+          <End Type="SchoolManagementSystemModel.Account" Role="Account" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.TransactionDetail" Role="TransactionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="TransactionDetail">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Address">
+          <End Type="SchoolManagementSystemModel.Address" Role="Address" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="AddressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Address">
+          <End Type="SchoolManagementSystemModel.Address" Role="Address" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="AddressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Cast">
+          <End Type="SchoolManagementSystemModel.Cast" Role="Cast" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cast">
+              <PropertyRef Name="CastId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="CastId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeeMaster_Class">
+          <End Type="SchoolManagementSystemModel.Class" Role="Class" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.FeeMaster" Role="FeeMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+            </Principal>
+            <Dependent Role="FeeMaster">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Class">
+          <End Type="SchoolManagementSystemModel.Class" Role="Class" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="Class" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeeMaster_FeeMaster">
+          <End Type="SchoolManagementSystemModel.Medium" Role="Medium" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.FeeMaster" Role="FeeMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medium">
+              <PropertyRef Name="MediumId" />
+            </Principal>
+            <Dependent Role="FeeMaster">
+              <PropertyRef Name="MediumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroupAssociation_Group">
+          <End Type="SchoolManagementSystemModel.Group" Role="Group" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.UserGroupAssociation" Role="UserGroupAssociation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="UserGroupAssociation">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Medium">
+          <End Type="SchoolManagementSystemModel.Medium" Role="Medium" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medium">
+              <PropertyRef Name="MediumId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="MediumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScholarShipDetails_ScholarShip">
+          <End Type="SchoolManagementSystemModel.ScholarShip" Role="ScholarShip" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.ScholarShipDetail" Role="ScholarShipDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScholarShip">
+              <PropertyRef Name="ScholarShipId" />
+            </Principal>
+            <Dependent Role="ScholarShipDetail">
+              <PropertyRef Name="ScholarShipTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScholarShipDetails_Student">
+          <End Type="SchoolManagementSystemModel.Student" Role="Student" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.ScholarShipDetail" Role="ScholarShipDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="ScholarShipDetail">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Section">
+          <End Type="SchoolManagementSystemModel.Section" Role="Section" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Section">
+              <PropertyRef Name="SectionId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="SectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_Student">
+          <End Type="SchoolManagementSystemModel.Student" Role="Student" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.TransactionDetail" Role="TransactionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="TransactionDetail">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_User">
+          <End Type="SchoolManagementSystemModel.User" Role="User" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.TransactionDetail" Role="TransactionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="TransactionDetail">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroupAssociation_User">
+          <End Type="SchoolManagementSystemModel.User" Role="User" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.UserGroupAssociation" Role="UserGroupAssociation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserGroupAssociation">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroupAssociation_UserGroupAssociation">
+          <End Type="SchoolManagementSystemModel.UserGroupAssociation" Role="UserGroupAssociation" Multiplicity="1" />
+          <End Type="SchoolManagementSystemModel.UserGroupAssociation" Role="UserGroupAssociation1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserGroupAssociation">
+              <PropertyRef Name="UserId" />
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="UserGroupAssociation1">
+              <PropertyRef Name="UserId" />
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SchoolManagementSystemModelStoreContainer" CdmEntityContainer="SchoolManagementSystemEntities">
+          <EntitySetMapping Name="AcademicYears">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.AcademicYear">
+              <MappingFragment StoreEntitySet="AcademicYear">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="AcademicYearEnd" ColumnName="AcademicYearEnd" />
+                <ScalarProperty Name="AcademicYearStart" ColumnName="AcademicYearStart" />
+                <ScalarProperty Name="AcademicYearId" ColumnName="AcademicYearId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="MediumId" ColumnName="MediumId" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="AcademicYearId" ColumnName="AcademicYearId" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="FeePaid" ColumnName="FeePaid" />
+                <ScalarProperty Name="CarryFarwordFee" ColumnName="CarryFarwordFee" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Village" ColumnName="Village" />
+                <ScalarProperty Name="AdrressLineOne" ColumnName="AdrressLineOne" />
+                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Casts">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.Cast">
+              <MappingFragment StoreEntitySet="Cast">
+                <ScalarProperty Name="CastName" ColumnName="CastName" />
+                <ScalarProperty Name="CastId" ColumnName="CastId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.Class">
+              <MappingFragment StoreEntitySet="Class">
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExamSubjectMarks">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.ExamSubjectMark">
+              <MappingFragment StoreEntitySet="ExamSubjectMarks">
+                <ScalarProperty Name="MarksObtained" ColumnName="MarksObtained" />
+                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+                <ScalarProperty Name="ExamTypeId" ColumnName="ExamTypeId" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExamTypes">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.ExamType">
+              <MappingFragment StoreEntitySet="ExamType">
+                <ScalarProperty Name="PassingMarksPerSubject" ColumnName="PassingMarksPerSubject" />
+                <ScalarProperty Name="PerSubjectMarks" ColumnName="PerSubjectMarks" />
+                <ScalarProperty Name="ExamName" ColumnName="ExamName" />
+                <ScalarProperty Name="ExamTypeId" ColumnName="ExamTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeeMasters">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.FeeMaster">
+              <MappingFragment StoreEntitySet="FeeMaster">
+                <ScalarProperty Name="AcademicYearId" ColumnName="AcademicYearId" />
+                <ScalarProperty Name="Fee" ColumnName="Fee" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="MediumId" ColumnName="MediumId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.Group">
+              <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="GroupDescription" ColumnName="GroupDescription" />
+                <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Media">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.Medium">
+              <MappingFragment StoreEntitySet="Medium">
+                <ScalarProperty Name="MediumName" ColumnName="MediumName" />
+                <ScalarProperty Name="MediumId" ColumnName="MediumId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScholarShips">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.ScholarShip">
+              <MappingFragment StoreEntitySet="ScholarShip">
+                <ScalarProperty Name="ScholarShipName" ColumnName="ScholarShipName" />
+                <ScalarProperty Name="ScholarShipId" ColumnName="ScholarShipId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScholarShipDetails">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.ScholarShipDetail">
+              <MappingFragment StoreEntitySet="ScholarShipDetails">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="AcademicYearId" ColumnName="AcademicYearId" />
+                <ScalarProperty Name="DateSanctioned" ColumnName="DateSanctioned" />
+                <ScalarProperty Name="AmountSanctioned" ColumnName="AmountSanctioned" />
+                <ScalarProperty Name="ScholarShipTypeId" ColumnName="ScholarShipTypeId" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="ScholarShipDetailsId" ColumnName="ScholarShipDetailsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sections">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.Section">
+              <MappingFragment StoreEntitySet="Section">
+                <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+                <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+                <ScalarProperty Name="MediumId" ColumnName="MediumId" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="CastId" ColumnName="CastId" />
+                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubjectMasters">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.SubjectMaster">
+              <MappingFragment StoreEntitySet="SubjectMaster">
+                <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubjectTables">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.SubjectTable">
+              <MappingFragment StoreEntitySet="SubjectTable">
+                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+                <ScalarProperty Name="MediumId" ColumnName="MediumId" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionDetails">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.TransactionDetail">
+              <MappingFragment StoreEntitySet="TransactionDetails">
+                <ScalarProperty Name="Rejected" ColumnName="Rejected" />
+                <ScalarProperty Name="AcademicYearId" ColumnName="AcademicYearId" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DatePaid" ColumnName="DatePaid" />
+                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="TransactionDetailsId" ColumnName="TransactionDetailsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trigs">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.trig">
+              <MappingFragment StoreEntitySet="trig">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UserTitle" ColumnName="UserTitle" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="PasswordChangeDate" ColumnName="PasswordChangeDate" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserGroupAssociations">
+            <EntityTypeMapping TypeName="SchoolManagementSystemModel.UserGroupAssociation">
+              <MappingFragment StoreEntitySet="UserGroupAssociation">
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SchoolManagement">
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.AcademicYear" Width="1.5" PointX="6" PointY="8.875" Height="2.2496956380208246" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.Account" Width="1.5" PointX="3" PointY="5.375" Height="3.0714322916666381" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.Address" Width="1.5" PointX="3.75" PointY="1.75" Height="2.0853483072916674" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.Cast" Width="1.5" PointX="3.75" PointY="9.625" Height="1.4279589843749818" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.Class" Width="1.5" PointX="0.75" PointY="6" Height="1.7566536458333246" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.ExamSubjectMark" Width="1.5" PointX="0.75" PointY="0.75" Height="1.7566536458333246" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.ExamType" Width="1.5" PointX="0.75" PointY="9.75" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.FeeMaster" Width="1.5" PointX="6" PointY="5.75" Height="2.2496956380208237" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.Group" Width="1.5" PointX="6" PointY="19.875" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.Medium" Width="1.5" PointX="3.75" PointY="11.75" Height="1.7566536458333246" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.ScholarShip" Width="1.5" PointX="6" PointY="11.875" Height="1.4279589843749818" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.ScholarShipDetail" Width="1.5" PointX="8.25" PointY="1.625" Height="2.5783902994791674" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.Section" Width="1.5" PointX="3.75" PointY="14.25" Height="1.4279589843749818" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.Student" Width="1.5" PointX="6" PointY="0.75" Height="4.2218636067708246" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.SubjectMaster" Width="1.5" PointX="8.75" PointY="9.75" Height="1.2636116536458246" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.SubjectTable" Width="1.5" PointX="10.75" PointY="0.75" Height="1.4279589843749818" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.sysdiagram" Width="1.5" PointX="10.75" PointY="3.75" Height="1.7566536458333246" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.TransactionDetail" Width="1.5" PointX="8.25" PointY="5.125" Height="3.0714322916666674" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.trig" Width="1.5" PointX="10.75" PointY="6.75" Height="1.2636116536458246" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.User" Width="1.5" PointX="6" PointY="14.875" Height="3.5644742838541674" />
+        <EntityTypeShape EntityType="SchoolManagementSystemModel.UserGroupAssociation" Width="1.5" PointX="8.25" PointY="15.625" Height="1.9210009765624818" />
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_Account_AcademicYear" >
+          <ConnectorPoint PointX="6" PointY="9.21875" />
+          <ConnectorPoint PointX="5.958333333333333" PointY="9.2187499999999982" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="9.21875" />
+          <ConnectorPoint PointX="3.34375" PointY="9.21875" />
+          <ConnectorPoint PointX="3.34375" PointY="8.446432291666639" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_FeeMaster_AcademicYear" >
+          <ConnectorPoint PointX="6.75" PointY="8.875" />
+          <ConnectorPoint PointX="6.75" PointY="7.9996956380208237" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_ScholarShipDetails_AcademicYear" >
+          <ConnectorPoint PointX="7.5" PointY="8.8761528461538468" />
+          <ConnectorPoint PointX="7.875" PointY="8.5011528461538468" />
+          <ConnectorPoint PointX="7.875" PointY="2.9141951497395837" />
+          <ConnectorPoint PointX="8.25" PointY="2.9141951497395837" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_TransactionDetails_AcademicYear" >
+          <ConnectorPoint PointX="7.5" PointY="9.3130789230769171" />
+          <ConnectorPoint PointX="7.854166666666667" PointY="9.3130789230769153" />
+          <ConnectorPoint PointX="8.1458333333333339" PointY="9.3130789230769171" />
+          <ConnectorPoint PointX="8.46875" PointY="9.3130789230769171" />
+          <ConnectorPoint PointX="8.46875" PointY="8.1964322916666674" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_Account_Class" >
+          <ConnectorPoint PointX="2.25" PointY="6.8783268229166623" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="6.8783268229166614" />
+          <ConnectorPoint PointX="2.5833333333333335" PointY="6.8783268229166623" />
+          <ConnectorPoint PointX="3" PointY="6.8783268229166623" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_Account_Medium" >
+          <ConnectorPoint PointX="3.75" PointY="12.628326822916662" />
+          <ConnectorPoint PointX="3.1406225" PointY="12.628326822916662" />
+          <ConnectorPoint PointX="3.1406225" PointY="8.446432291666639" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_Account_Student" >
+          <ConnectorPoint PointX="6" PointY="4.434855957031246" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="4.4348559570312451" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="4.434855957031246" />
+          <ConnectorPoint PointX="3.34375" PointY="4.434855957031246" />
+          <ConnectorPoint PointX="3.34375" PointY="5.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_TransactionDetails_Account" >
+          <ConnectorPoint PointX="4.5" PointY="5.53125" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="5.5312499999999991" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="5.53125" />
+          <ConnectorPoint PointX="6.666666666666667" PointY="5.5312499999999991" />
+          <ConnectorPoint PointX="6.833333333333333" PointY="5.53125" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="5.5312499999999991" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="5.53125" />
+          <ConnectorPoint PointX="7.979166666666667" PointY="5.5312499999999991" />
+          <ConnectorPoint PointX="8.1458333333333339" PointY="5.53125" />
+          <ConnectorPoint PointX="8.25" PointY="5.53125" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_Student_Address" >
+          <ConnectorPoint PointX="5.25" PointY="2.7926741536458337" />
+          <ConnectorPoint PointX="5.572916666666667" PointY="2.7926741536458324" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="2.7926741536458337" />
+          <ConnectorPoint PointX="6" PointY="2.7926741536458337" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_User_Address" >
+          <ConnectorPoint PointX="5.25" PointY="3.8353483072916674" />
+          <ConnectorPoint PointX="5.625" PointY="4.2103483072916674" />
+          <ConnectorPoint PointX="5.625" PointY="16.657237141927084" />
+          <ConnectorPoint PointX="6" PointY="16.657237141927084" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_Student_Cast" >
+          <ConnectorPoint PointX="5.25" PointY="9.6865110793269231" />
+          <ConnectorPoint PointX="5.56607443490112" PointY="9.3704366444258014" />
+          <ConnectorPoint PointX="5.7776755650988791" PointY="9.1588355142280449" />
+          <ConnectorPoint PointX="5.8125" PointY="9.1240110793269231" />
+          <ConnectorPoint PointX="5.8125" PointY="1.7400850768229232" />
+          <ConnectorPoint PointX="6" PointY="1.7400850768229232" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_FeeMaster_Class" >
+          <ConnectorPoint PointX="2.25" PointY="6.407911411458338" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="6.4079114114583371" />
+          <ConnectorPoint PointX="2.5833333333333335" PointY="6.407911411458338" />
+          <ConnectorPoint PointX="2.75" PointY="6.407911411458338" />
+          <ConnectorPoint PointX="2.75" PointY="5.125" />
+          <ConnectorPoint PointX="3.2604166666666665" PointY="5.1249999999999991" />
+          <ConnectorPoint PointX="3.4270833333333335" PointY="5.125" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="5.1249999999999991" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="5.125" />
+          <ConnectorPoint PointX="6.2916671666666675" PointY="5.1249999999999991" />
+          <ConnectorPoint PointX="6.4583338333333336" PointY="5.125" />
+          <ConnectorPoint PointX="6.75" PointY="5.125" />
+          <ConnectorPoint PointX="6.75" PointY="5.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_Student_Class" >
+          <ConnectorPoint PointX="2.25" PointY="7.3487422343749866" />
+          <ConnectorPoint PointX="2.5" PointY="7.3487422343749866" />
+          <ConnectorPoint PointX="2.5" PointY="5.25" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="5.2499999999999991" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="5.25" />
+          <ConnectorPoint PointX="3.2604166666666665" PointY="5.2499999999999991" />
+          <ConnectorPoint PointX="3.4270833333333335" PointY="5.25" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="5.2499999999999991" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="5.25" />
+          <ConnectorPoint PointX="6.3750005000000005" PointY="5.25" />
+          <ConnectorPoint PointX="6.3750005000000005" PointY="4.9718636067708246" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_FeeMaster_FeeMaster" >
+          <ConnectorPoint PointX="5.25" PointY="11.776537461538462" />
+          <ConnectorPoint PointX="5.5660744349011209" PointY="11.46046302663734" />
+          <ConnectorPoint PointX="5.7151755650988791" PointY="11.311361896439584" />
+          <ConnectorPoint PointX="5.875" PointY="11.15153746153846" />
+          <ConnectorPoint PointX="5.875" PointY="6.8748478190104123" />
+          <ConnectorPoint PointX="6" PointY="6.8748478190104123" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_UserGroupAssociation_Group" >
+          <ConnectorPoint PointX="7.5" PointY="20.671153157552084" />
+          <ConnectorPoint PointX="9" PointY="20.671153157552084" />
+          <ConnectorPoint PointX="9" PointY="17.546000976562482" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_Student_Medium" >
+          <ConnectorPoint PointX="5.25" PointY="11.758075923076925" />
+          <ConnectorPoint PointX="5.5660744349011209" PointY="11.442001488175801" />
+          <ConnectorPoint PointX="5.7151755650988791" PointY="11.292900357978045" />
+          <ConnectorPoint PointX="5.71875" PointY="11.289325923076923" />
+          <ConnectorPoint PointX="5.71875" PointY="3.61376505533854" />
+          <ConnectorPoint PointX="5.729166666666667" PointY="3.6137650553385394" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="3.61376505533854" />
+          <ConnectorPoint PointX="6" PointY="3.61376505533854" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_ScholarShipDetails_ScholarShip" >
+          <ConnectorPoint PointX="7.5" PointY="11.936511079326923" />
+          <ConnectorPoint PointX="7.8785744349011209" PointY="11.557936644425801" />
+          <ConnectorPoint PointX="7.9964255650988791" PointY="11.440085514228045" />
+          <ConnectorPoint PointX="8.0625" PointY="11.374011079326923" />
+          <ConnectorPoint PointX="8.0625" PointY="3.5900447246093692" />
+          <ConnectorPoint PointX="8.25" PointY="3.5900447246093692" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_ScholarShipDetails_Student" >
+          <ConnectorPoint PointX="7.5" PointY="2.2070975748697919" />
+          <ConnectorPoint PointX="8.25" PointY="2.2070975748697919" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_Student_Section" >
+          <ConnectorPoint PointX="5.25" PointY="14.280755039663461" />
+          <ConnectorPoint PointX="5.65625" PointY="13.874505039663461" />
+          <ConnectorPoint PointX="5.65625" PointY="2.2663796152343787" />
+          <ConnectorPoint PointX="5.729166666666667" PointY="2.2663796152343783" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="2.2663796152343787" />
+          <ConnectorPoint PointX="6" PointY="2.2663796152343787" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_TransactionDetails_Student" >
+          <ConnectorPoint PointX="7.5" PointY="4.9095549144631319" />
+          <ConnectorPoint PointX="7.6875" PointY="5.0970549144631319" />
+          <ConnectorPoint PointX="7.6875" PointY="4.5625" />
+          <ConnectorPoint PointX="7.8160744349011217" PointY="4.6910744349011209" />
+          <ConnectorPoint PointX="7.9339255650988791" PointY="4.8089255650988791" />
+          <ConnectorPoint PointX="8.0035744349011217" PointY="4.8785744349011209" />
+          <ConnectorPoint PointX="8.1214255650988783" PointY="4.9964255650988791" />
+          <ConnectorPoint PointX="8.25" PointY="5.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_TransactionDetails_User" >
+          <ConnectorPoint PointX="7.5" PointY="14.938460538461539" />
+          <ConnectorPoint PointX="7.9375" PointY="14.500960538461541" />
+          <ConnectorPoint PointX="7.9375" PointY="6.8950931458333278" />
+          <ConnectorPoint PointX="7.979166666666667" PointY="6.8950931458333269" />
+          <ConnectorPoint PointX="8.1458333333333339" PointY="6.8950931458333278" />
+          <ConnectorPoint PointX="8.25" PointY="6.8950931458333278" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_UserGroupAssociation_User" >
+          <ConnectorPoint PointX="7.5" PointY="16.585500488281241" />
+          <ConnectorPoint PointX="8.25" PointY="16.585500488281241" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolManagementSystemModel.FK_UserGroupAssociation_UserGroupAssociation" >
+          <ConnectorPoint PointX="8.7819230769230767" PointY="15.625" />
+          <ConnectorPoint PointX="8.7819230769230767" PointY="15.375" />
+          <ConnectorPoint PointX="9.2284615384615378" PointY="15.375" />
+          <ConnectorPoint PointX="9.2284615384615378" PointY="15.625" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
